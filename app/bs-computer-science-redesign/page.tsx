@@ -24,7 +24,9 @@ export default function NJITCSProgram() {
       skills: ["Roadmap to Computing", "Data Structures & Algorithms", "Calculus for Physics"],
       icon: <Binary size={24} />,
       accent: "text-blue-500",
-      bg: "bg-blue-500/5"
+      bg: "bg-blue-500/5",
+      courses: ["Roadmap to Computing", "Intro to Computer Science II", "Data Structures & Algorithms"],
+      color: "bg-blue-50"
     },
     {
       phase: "Phase 02",
@@ -34,7 +36,9 @@ export default function NJITCSProgram() {
       skills: ["Operating Systems", "Computer Systems", "Database System Design"],
       icon: <Boxes size={24} />,
       accent: "text-purple-500",
-      bg: "bg-purple-500/5"
+      bg: "bg-purple-500/5",
+      courses: ["Computer Systems", "Operating Systems", "Computer Network Management"],
+      color: "bg-indigo-50"
     },
     {
       phase: "Phase 03",
@@ -44,7 +48,9 @@ export default function NJITCSProgram() {
       skills: ["Software Engineering", "Computer Network Management", "Intensive Programming"],
       icon: <Globe size={24} />,
       accent: "text-red-600",
-      bg: "bg-red-600/5"
+      bg: "bg-red-600/5",
+      courses: ["Software Engineering", "Intensive Programming", "Database System Design"],
+      color: "bg-purple-50"
     }
   ];
 
@@ -209,6 +215,7 @@ export default function NJITCSProgram() {
                   ))}
                 </div>
                 
+                
                 <div className="mt-16 text-center">
                   <a href="https://catalog.njit.edu/undergraduate/computing/computer-science/bs/" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest hover:bg-red-600 transition-all">
                     Download Full Course Roadmap <ExternalLink size={14} />
@@ -216,6 +223,26 @@ export default function NJITCSProgram() {
                 </div>
               </div>
             </section>
+
+
+            
+
+      {/* Stats Section */}
+      <section className="bg-slate-50 py-20 px-6 border-y border-slate-100">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          {[
+            { label: "Placement Rate", value: "90%" },
+            { label: "Avg Starting Salary", value: "$82k+" },
+            { label: "Corporate Partners", value: "200+" },
+            { label: "Faculty Research", value: "R1 Rank" }
+          ].map((stat) => (
+            <div key={stat.label}>
+              <div className="text-4xl font-bold text-slate-900 mb-2">{stat.value}</div>
+              <div className="text-slate-500 text-sm font-medium uppercase tracking-wider">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* The Technical Stack */}
       <section id="curriculum" className="py-32">
@@ -240,7 +267,23 @@ export default function NJITCSProgram() {
           </div>
         </div>
       </section>
+{/* Mind-Blowing Curriculum Section*/}
+    <section className="py-24 px-6 lg:px-24 max-w-7xl mx-auto">
+       
 
+        {/* Specialization Callout */}
+        <div className="mt-12 p-8 lg:p-12 bg-slate-900 rounded-[3rem] text-white flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="max-w-xl">
+            <h3 className="text-3xl font-bold mb-4">Define Your Specialization</h3>
+            <p className="text-slate-400">
+              Customize your degree with technical electives in <span className="text-white font-semibold">Artificial Intelligence</span>, <span className="text-white font-semibold">Cybersecurity</span>, or <span className="text-white font-semibold">Game Development</span>.
+            </p>
+          </div>
+          <button className="whitespace-nowrap bg-white text-black px-10 py-4 rounded-full font-bold hover:bg-slate-200 transition">
+            Explore Electives
+          </button>
+        </div>
+      </section>
       {/* Career Ready Section - USING THE INTERACTIVE CARD */}
       <section id="outcomes" className="py-32 mx-auto max-w-7xl px-6 border-t border-slate-100">
         <div className="grid lg:grid-cols-2 gap-24 items-center">
@@ -318,12 +361,12 @@ export default function NJITCSProgram() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-red-600 py-32 text-center text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
+      <section className="bg-red-600 py-40 text-center text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-slate-950 opacity-10 mix-blend-overlay" />
         <div className="relative z-10 mx-auto max-w-4xl px-6">
-          <Terminal className="mx-auto mb-8 opacity-40" size={60} strokeWidth={1.5} />
-          <h2 className="text-5xl font-black tracking-tighter mb-10 uppercase italic">Ready to Compile?</h2>
-          <a href="https://www.njit.edu/apply" className="inline-block bg-white text-red-600 px-14 py-6 rounded-md font-black uppercase tracking-[0.3em] text-[10px] hover:bg-slate-900 hover:text-white transition-all shadow-2xl">
+          <Terminal className="mx-auto mb-10 opacity-30 animate-bounce" size={80} />
+          <h2 className="text-6xl font-black tracking-tighter mb-12 uppercase italic leading-none">Ready to <br/>Initialize?</h2>
+          <a href="https://www.njit.edu/apply" className="inline-block bg-white text-red-600 px-16 py-8 rounded-full font-black uppercase tracking-[0.3em] text-[12px] hover:bg-slate-950 hover:text-white transition-all shadow-2xl scale-100 hover:scale-105">
             Start Your Pipeline
           </a>
         </div>

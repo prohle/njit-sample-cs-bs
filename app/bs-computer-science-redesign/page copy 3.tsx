@@ -192,6 +192,69 @@ export default function NJITCSProgram() {
         </div>
       </section>
 
+
+{/* Mind-Blowing Curriculum Section */}
+      <section className="py-24 px-6 lg:px-24 max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4">A Curriculum Designed for Mastery</h2>
+          <p className="text-slate-500 max-w-2xl mx-auto text-lg">
+            Our program is ABET-accredited and built to transition you from a curious learner to a high-impact engineer.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {curriculumPhases.map((phase, idx) => (
+            <div key={idx} className={`${phase.color} p-8 rounded-[2.5rem] border border-slate-100 transition-transform hover:-translate-y-2`}>
+              <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-6 text-2xl font-bold text-slate-400">
+                0{idx + 1}
+              </div>
+              <h3 className="text-2xl font-bold mb-3">{phase.title}</h3>
+              <p className="text-slate-600 mb-6 text-sm leading-relaxed">
+                {phase.description}
+              </p>
+              <ul className="space-y-3">
+                {phase.courses.map((course) => (
+                  <li key={course} className="flex items-center gap-3 text-slate-800 font-medium">
+                    <div className="w-1.5 h-1.5 bg-red-500 rounded-full" />
+                    {course}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Specialization Callout */}
+        <div className="mt-12 p-8 lg:p-12 bg-slate-900 rounded-[3rem] text-white flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="max-w-xl">
+            <h3 className="text-3xl font-bold mb-4">Define Your Specialization</h3>
+            <p className="text-slate-400">
+              Customize your degree with technical electives in <span className="text-white font-semibold">Artificial Intelligence</span>, <span className="text-white font-semibold">Cybersecurity</span>, or <span className="text-white font-semibold">Game Development</span>.
+            </p>
+          </div>
+          <button className="whitespace-nowrap bg-white text-black px-10 py-4 rounded-full font-bold hover:bg-slate-200 transition">
+            Explore Electives
+          </button>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="bg-slate-50 py-20 px-6 border-y border-slate-100">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          {[
+            { label: "Placement Rate", value: "90%" },
+            { label: "Avg Starting Salary", value: "$82k+" },
+            { label: "Corporate Partners", value: "200+" },
+            { label: "Faculty Research", value: "R1 Rank" }
+          ].map((stat) => (
+            <div key={stat.label}>
+              <div className="text-4xl font-bold text-slate-900 mb-2">{stat.value}</div>
+              <div className="text-slate-500 text-sm font-medium uppercase tracking-wider">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* 4+1 Program & Interactive Outcome Card */}
       <section id="outcomes" className="py-32 bg-slate-50 relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-24 items-center">
