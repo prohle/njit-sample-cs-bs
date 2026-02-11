@@ -232,7 +232,7 @@ export default function NJITCSProgram() {
         <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           {[
             { label: "Placement Rate", value: "90%" },
-            { label: "Avg Starting Salary", value: "$76.25k+" },
+            { label: "Avg Starting Salary", value: "$76k+" },
             { label: "Corporate Partners", value: "200+" },
             { label: "Faculty Research", value: "R1 Rank" }
           ].map((stat) => (
