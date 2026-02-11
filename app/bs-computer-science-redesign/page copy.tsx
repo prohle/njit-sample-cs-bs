@@ -1,10 +1,16 @@
 import React from 'react';
 import { 
-  ArrowUpRight, Terminal, Cpu, Shield, 
-  Code2, Mail, ExternalLink, Target 
+  ArrowUpRight, 
+  Terminal,
+  Cpu,
+  Shield,
+  Code2,
+  Mail,
+  ExternalLink,
+  BookOpen,
+  Users,
+  Target
 } from 'lucide-react';
-// Import your interactive Client Component
-import ResumeCard from './ResumeCard'; 
 
 export default function NJITCSProgram() {
   const assets = {
@@ -50,10 +56,7 @@ export default function NJITCSProgram() {
   ];
 
   return (
-    <div 
-      className="min-h-screen bg-[#fafafa] text-slate-900 font-sans selection:bg-red-600 selection:text-white"
-      suppressHydrationWarning={true}
-    >
+    <div className="min-h-screen bg-[#fafafa] text-slate-900 font-sans selection:bg-red-600 selection:text-white">
       
       {/* Navigation */}
       <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
@@ -164,7 +167,7 @@ export default function NJITCSProgram() {
         </div>
       </section>
 
-      {/* Career Ready Section - USING THE INTERACTIVE CARD */}
+      {/* Career Ready Section */}
       <section id="outcomes" className="py-32 mx-auto max-w-7xl px-6 border-t border-slate-100">
         <div className="grid lg:grid-cols-2 gap-24 items-center">
           <div>
@@ -181,10 +184,31 @@ export default function NJITCSProgram() {
             </a>
           </div>
 
-          {/* INSERTED CLIENT COMPONENT HERE */}
-          <div className="relative">
-            <ResumeCard />
-            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-4/5 h-10 bg-slate-900/5 blur-3xl rounded-full" />
+          {/* Resume Preview UI */}
+          <div className="rounded-[2.5rem] border border-slate-200 bg-white p-1 shadow-2xl relative overflow-hidden group">
+            <div className="bg-slate-50 rounded-[calc(2.5rem-4px)] p-10">
+              <div className="flex items-center justify-between mb-12">
+                <div className="flex gap-2">
+                  <div className="w-2.5 h-2.5 rounded-full bg-slate-200" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-slate-200" />
+                </div>
+                <span className="font-mono text-[9px] text-slate-400 tracking-widest uppercase italic">buffer_id_njit_001</span>
+              </div>
+              
+              <div className="space-y-8 font-mono">
+                <div className="flex justify-between items-end border-b border-slate-200 pb-2 mb-4">
+                  <span className="text-slate-900 text-xs font-bold uppercase tracking-tight">Candidate_NJIT_CS</span>
+                  <span className="text-slate-400 text-[9px]">CLASS OF 2026</span>
+                </div>
+                <div className="space-y-4">
+                  <p className="text-red-600 text-[9px] font-bold uppercase tracking-[0.4em]">Experience</p>
+                  <div className="pl-4 border-l-2 border-red-200">
+                    <p className="text-slate-900 text-[11px] font-bold">Software Engineer Intern — META</p>
+                    <p className="text-slate-500 text-[10px] mt-1 italic">Optimized distributed database queries by 24%.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -240,15 +264,15 @@ export default function NJITCSProgram() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="bg-red-600 py-32 text-center text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
         <div className="relative z-10 mx-auto max-w-4xl px-6">
           <Terminal className="mx-auto mb-8 opacity-40" size={60} strokeWidth={1.5} />
           <h2 className="text-5xl font-black tracking-tighter mb-10 uppercase italic">Ready to Compile?</h2>
-          <a href="https://www.njit.edu/apply" className="inline-block bg-white text-red-600 px-14 py-6 rounded-md font-black uppercase tracking-[0.3em] text-[10px] hover:bg-slate-900 hover:text-white transition-all shadow-2xl">
+          <button className="bg-white text-red-600 px-14 py-6 rounded-md font-black uppercase tracking-[0.3em] text-[10px] hover:bg-slate-900 hover:text-white transition-all shadow-2xl">
             Start Your Pipeline
-          </a>
+          </button>
         </div>
       </section>
 
