@@ -1,11 +1,16 @@
 import React from 'react';
 import { 
   ArrowUpRight, Terminal, Cpu, Shield, 
-  Code2, Mail, ExternalLink, Target , Globe, Boxes, Binary
+  Code2, Mail, ExternalLink, Target 
 } from 'lucide-react'; 
 
+// import ResumeCard from './ResumeCard'; 
+import dynamic from 'next/dynamic';
 
-import ResumeCardWrapper from './ResumeCardWrapper';
+const ResumeCard = dynamic(() => import('./ResumeCard'), { 
+  ssr: false,
+  loading: () => <div className="h-[450px] w-[380px] bg-slate-100 animate-pulse rounded-[3rem]" />
+});
 
 export default function NJITCSProgram() {
   const assets = {
@@ -14,40 +19,6 @@ export default function NJITCSProgram() {
   };
 
   const logos = ["Google", "Amazon", "Microsoft", "Meta", "IBM", "Prudential", "NASA", "UPS"];
-
-  const curriculumPhases = [
-    {
-      phase: "Phase 01",
-      title: "Core Architecture",
-      subtitle: "The Binary Foundation",
-      description: "Master the fundamental logic and structural thinking required for high-level engineering.",
-      skills: ["Roadmap to Computing", "Data Structures & Algorithms", "Calculus for Physics"],
-      icon: <Binary size={24} />,
-      accent: "text-blue-500",
-      bg: "bg-blue-500/5"
-    },
-    {
-      phase: "Phase 02",
-      title: "Systemic Engineering",
-      subtitle: "Deep-Stack Integration",
-      description: "Bridge the gap between abstract software and the physical silicon architectures they run on.",
-      skills: ["Operating Systems", "Computer Systems", "Database System Design"],
-      icon: <Boxes size={24} />,
-      accent: "text-purple-500",
-      bg: "bg-purple-500/5"
-    },
-    {
-      phase: "Phase 03",
-      title: "Production Scale",
-      subtitle: "Deployment & Strategy",
-      description: "Learn to build, secure, and manage massive distributed systems in a global infrastructure.",
-      skills: ["Software Engineering", "Computer Network Management", "Intensive Programming"],
-      icon: <Globe size={24} />,
-      accent: "text-red-600",
-      bg: "bg-red-600/5"
-    }
-  ];
-
 
   const programDirectors = [
     {
@@ -126,14 +97,14 @@ export default function NJITCSProgram() {
           <div className="max-w-4xl">
             <div className="mb-10 inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-4 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-red-400 backdrop-blur-md">
               <span className="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse shadow-[0_0_8px_rgba(239,68,68,0.8)]" />
-              Engineering the Digital Frontier // BSCS
+              Compile the Future // BSCS
             </div>
             <h1 className="text-6xl font-black tracking-tighter text-white md:text-8xl lg:text-9xl leading-[0.85]">
-              Build the<br/>
-              <span className="text-red-600 italic">Next Era.</span>
+              Build for the <br/>
+              <span className="text-red-600 italic">Next Generation.</span>
             </h1>
             <p className="mt-12 max-w-2xl text-lg text-slate-300 font-medium leading-relaxed md:text-xl">
-              NJIT’s B.S. in Computer Science is a premier gateway to the NYC tech corridor. <span className="text-white font-bold">90% of graduates placed within 6 months.</span>
+              NJIT’s B.S. in Computer Science is a direct pipeline to the NYC tech corridor. <span className="text-white font-bold">90% of graduates placed within 6 months.</span>
             </p>
           </div>
         </div>
@@ -165,7 +136,7 @@ export default function NJITCSProgram() {
       <section className="py-20 bg-white/50 border-b border-slate-100 mt-12">
         <div className="mx-auto max-w-7xl px-6">
           <p className="text-center font-mono text-[9px] uppercase tracking-[0.4em] text-slate-400 mb-10">
-            Graduates vested at Global Leaders
+            Graduates vested at
           </p>
           <div className="flex flex-wrap justify-between items-center gap-8 grayscale opacity-40">
             {logos.map(logo => (
@@ -174,48 +145,6 @@ export default function NJITCSProgram() {
           </div>
         </div>
       </section>
-
-      {/* Curriculum: The Evolutionary Roadmap */}
-            <section id="curriculum" className="py-32 bg-white relative">
-              <div className="mx-auto max-w-7xl px-6">
-                <div className="text-center mb-24">
-                  <h2 className="text-5xl font-black tracking-tighter uppercase mb-4">A Blueprint for Mastery</h2>
-                  <p className="text-slate-500 font-mono text-[11px] uppercase tracking-[0.4em]">120 Credits // ABET-Accredited Curriculum</p>
-                </div>
-      
-                <div className="grid lg:grid-cols-3 gap-8 relative">
-                  <div className="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-slate-100 -z-0" />
-                  {curriculumPhases.map((phase, i) => (
-                    <div key={i} className="relative z-10 group">
-                      <div className={`p-10 rounded-[3rem] ${phase.bg} border border-slate-100 group-hover:border-slate-200 transition-all duration-500 hover:shadow-2xl hover:shadow-slate-200/50 h-full`}>
-                        <div className={`mb-8 inline-flex p-4 rounded-2xl bg-white shadow-sm ${phase.accent}`}>
-                          {phase.icon}
-                        </div>
-                        <p className={`font-mono text-[10px] font-bold uppercase tracking-widest mb-2 ${phase.accent}`}>
-                          {phase.phase} — {phase.subtitle}
-                        </p>
-                        <h3 className="text-2xl font-black tracking-tight mb-4">{phase.title}</h3>
-                        <p className="text-slate-500 text-sm leading-relaxed mb-8">{phase.description}</p>
-                        <div className="space-y-3">
-                          {phase.skills.map((skill, si) => (
-                            <div key={si} className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-tight text-slate-700">
-                              <div className="h-1 w-1 rounded-full bg-slate-300" />
-                              {skill}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                
-                <div className="mt-16 text-center">
-                  <a href="https://catalog.njit.edu/undergraduate/computing/computer-science/bs/" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest hover:bg-red-600 transition-all">
-                    Download Full Course Roadmap <ExternalLink size={14} />
-                  </a>
-                </div>
-              </div>
-            </section>
 
       {/* The Technical Stack */}
       <section id="curriculum" className="py-32">
@@ -260,7 +189,7 @@ export default function NJITCSProgram() {
 
           {/* INSERTED CLIENT COMPONENT HERE */}
           <div className="relative">
-            <ResumeCardWrapper />
+            <ResumeCard />
             <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-4/5 h-10 bg-slate-900/5 blur-3xl rounded-full" />
           </div>
         </div>
