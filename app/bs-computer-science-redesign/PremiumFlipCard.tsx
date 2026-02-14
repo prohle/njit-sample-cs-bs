@@ -1,11 +1,26 @@
 "use client";
 import React, { useState } from 'react';
+interface PhaseData {
+  phase: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  skills: string[];
+  icon: React.ReactElement; // For the <Binary /> component
+  accent: string;
+  bg: string;
+  courses: string[];
+  color: string;
+}
 
-const PremiumFlipCard = ({ phase }) => {
+interface MagazineFlipCardProps {
+  phase: PhaseData;
+}
+const PremiumFlipCard = ({ phase }:MagazineFlipCardProps) => {
   // 0: Neutral, 1: Flipped Up, -1: Flipped Down
   const [flipDirection, setFlipDirection] = useState(0);
 
-  const handleMouseEnter = (e) => {
+  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const y = e.clientY - rect.top; // cursor position relative to card
     const height = rect.height;
