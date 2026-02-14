@@ -1,10 +1,12 @@
 "use client";
 import React, { useState } from 'react';
-
-const MagazineFlipCard = ({ phase }) => {
+interface MagazineFlipCardProps {
+  phase: string; // or 'loading' | 'active' | 'complete' if you have specific values
+}
+const MagazineFlipCard = ({ phase }: MagazineFlipCardProps) => {
   const [activeHalf, setActiveHalf] = useState('none');
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const y = e.clientY - rect.top;
     setActiveHalf(y < rect.height / 2 ? 'bottom' : 'top');
