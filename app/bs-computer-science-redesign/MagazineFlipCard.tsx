@@ -7,7 +7,7 @@ interface PhaseData {
   subtitle: string;
   description: string;
   skills: string[];
-  icon: React.ReactNode | undefined; // For the <Binary /> component
+  icon: React.ReactElement; // For the <Binary /> component
   accent: string;
   bg: string;
   courses: string[];
