@@ -45,7 +45,7 @@ const MagazineFlipCard = ({ phase }: MagazineFlipCardProps) => {
             <div className="flex gap-5 items-center">
               <div className={`p-3 rounded-xl bg-white shadow-sm border border-slate-100 ${phase.accent}`}>
                 {/* Scaled down slightly for the interior layout */}
-                {React.cloneElement(phase.icon, { size: 20 })}
+                {React.cloneElement(phase.icon as React.ReactElement<{ size?: number }>, { size: 20 })}
               </div>
               <div className="space-y-1">
                 <p className="text-red-600 font-mono text-[9px] font-bold uppercase tracking-[0.3em]">Phase Protocol</p>
