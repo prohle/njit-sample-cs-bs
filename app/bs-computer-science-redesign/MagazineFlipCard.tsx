@@ -1,9 +1,7 @@
 "use client";
 import React, { useState } from 'react';
-interface MagazineFlipCardProps {
-  phase: string; // or 'loading' | 'active' | 'complete' if you have specific values
-}
-const MagazineFlipCard = ({ phase }: MagazineFlipCardProps) => {
+ 
+const MagazineFlipCard = ({ phase }: any) => {
   const [activeHalf, setActiveHalf] = useState('none');
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
