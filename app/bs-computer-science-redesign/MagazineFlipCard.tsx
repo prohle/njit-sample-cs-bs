@@ -1,7 +1,23 @@
 "use client";
 import React, { useState } from 'react';
- 
-const MagazineFlipCard = ({ phase }: any) => {
+// Define the shape of your phase object
+interface PhaseData {
+  phase: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  skills: string[];
+  icon: React.ReactNode; // For the <Binary /> component
+  accent: string;
+  bg: string;
+  courses: string[];
+  color: string;
+}
+
+interface MagazineFlipCardProps {
+  phase: PhaseData;
+}
+const MagazineFlipCard = ({ phase }: MagazineFlipCardProps) => {
   const [activeHalf, setActiveHalf] = useState('none');
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
